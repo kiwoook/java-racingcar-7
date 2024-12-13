@@ -23,6 +23,7 @@ public class StringUtils {
         validateRange(input);
     }
 
+    // TODO 해당 조건이 빈값도 허용하는지 체크
     public static void validateInput(String input) {
         if (input == null || input.isBlank()) {
             throw new CustomIllegalArgumentException(ErrorMessage.INVALID_INPUT.getMessage());

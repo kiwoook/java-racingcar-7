@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import racingcar.model.Cars;
+import racingcar.model.TryCount;
 import racingcar.view.InputViewer;
 import racingcar.view.OutputViewer;
 
@@ -16,7 +17,9 @@ public class RacingCarController {
 
     public void execute() {
         Cars cars = getCars();
-        System.out.println(cars);
+        TryCount tryCount = getTryCount();
+
+
     }
 
     public Cars getCars() {
@@ -24,4 +27,12 @@ public class RacingCarController {
 
         return Cars.from(names);
     }
+
+    public TryCount getTryCount() {
+        String maxCount = inputViewer.promptTryCount();
+
+        return TryCount.from(maxCount);
+    }
+
+  
 }

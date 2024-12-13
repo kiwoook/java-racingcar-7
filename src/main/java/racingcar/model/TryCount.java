@@ -4,8 +4,8 @@ import racingcar.exception.CustomIllegalArgumentException;
 
 public class TryCount {
 
-    public final int maxCount;
-    public int count;
+    private final int maxCount;
+    private int count;
 
     public TryCount(int maxCount) {
         this.maxCount = maxCount;

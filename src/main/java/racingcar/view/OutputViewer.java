@@ -8,4 +8,8 @@ public class OutputViewer {
         System.out.println(ERROR_SIGN + e.getMessage());
     }
 
+    public void printMessage(String message) {
+        System.out.println(message);
+    }
+
 }

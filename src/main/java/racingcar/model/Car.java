@@ -26,10 +26,24 @@ public class Car {
         }
     }
 
-    public void move(int value) {
+    public boolean isMaxMove(int maxMove) {
+        return this.move == maxMove;
+    }
+
+    public int move(int value) {
         if (value >= 4) {
             move++;
         }
+
+        return move;
+    }
+
+    public String status() {
+        return name + " : " + "-".repeat(move);
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

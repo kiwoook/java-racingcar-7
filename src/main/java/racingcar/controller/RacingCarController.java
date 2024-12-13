@@ -1,5 +1,7 @@
 package racingcar.controller;
 
+import static racingcar.utils.Constants.ENTER;
+
 import racingcar.model.Cars;
 import racingcar.model.TryCount;
 import racingcar.view.InputViewer;
@@ -19,7 +21,7 @@ public class RacingCarController {
         Cars cars = getCars();
         TryCount tryCount = getTryCount();
 
-
+        result(cars, tryCount);
     }
 
     public Cars getCars() {
@@ -34,5 +36,13 @@ public class RacingCarController {
         return TryCount.from(maxCount);
     }
 
-  
+    public void result(Cars cars, TryCount tryCount) {
+        outputViewer.printMessage(ENTER + "실행 결과");
+        while (tryCount.canTry()) {
+            cars.moveAll();
+            outputViewer.printMessage(cars.statusAll() + ENTER);
+        }
+
+        outputViewer.printMessage("최종 우승자 : " + cars.getWinner());
+    }
 }
